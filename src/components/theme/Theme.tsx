@@ -1,18 +1,12 @@
-import { useState, useLayoutEffect } from 'react';
 import ligth from '../../../public/theme-light.svg';
 import dark from '../../../public/theme-dark.svg';
 
+import useTheme from '../../hooks/useTheme';
 import styles from './styles.module.scss';
 
 const Theme = () => {
-  const [theme, setTheme] = useState('dark');
+  const { theme, setTheme } = useTheme();
 
-  useLayoutEffect(() => {
-    document.body.setAttribute(
-      'data-theme',
-      theme === 'dark' ? 'light' : 'dark'
-    );
-  }, [theme]);
   return (
     <div>
       <button
@@ -22,9 +16,9 @@ const Theme = () => {
         aria-label="Set theme"
       >
         {theme === 'dark' ? (
-          <img src={dark} alt="Enable light theme" />
-        ) : (
           <img src={ligth} alt="Enable dark theme" />
+        ) : (
+          <img src={dark} alt="Enable light theme" />
         )}
       </button>
     </div>
