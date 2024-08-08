@@ -1,4 +1,5 @@
 import Logo from '../logo/Logo';
+import Theme from '../theme/Theme';
 import styles from './styles.module.scss';
 
 const Header = () => {
@@ -7,6 +8,7 @@ const Header = () => {
       <div className="container">
         <div className={styles.wrapper}>
           <Logo />
+          <Theme />
         </div>
       </div>
     </header>

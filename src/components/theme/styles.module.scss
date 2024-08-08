@@ -1,0 +1,13 @@
+.button {
+  border: none;
+  height: 40px;
+  width: 40px;
+  padding: 10px;
+  background-color: var(--secondary-color);
+  border-radius: 50px;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 1px 1px var(--text-color);
+  }
+}
