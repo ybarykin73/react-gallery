@@ -12,6 +12,7 @@
   --primary-color: #121212;
   --primery-light-gray: #dedede;
   --primary-dark-gray: #575757;
+  --button-hover-color: #ffffff;
 
   --secondary-color: #1a1818;
   --accent-color: #ab8956;
@@ -22,6 +23,7 @@
   --primary-color: #ffffff;
   --primery-light-gray: #575757;
   --primary-dark-gray: #adedede;
+  --button-hover-color: #121212;
 
   --secondary-color: #fcfcfc;
   --accent-color: #9b4b4b;
