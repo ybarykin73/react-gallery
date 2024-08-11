@@ -18,7 +18,7 @@
   --text-color: #dedede;
 }
 
-[data-theme='light'] {
+[data-theme='ligth'] {
   --primary-color: #ffffff;
   --primery-light-gray: #575757;
   --primary-dark-gray: #adedede;
@@ -28,16 +28,78 @@
   --text-color: #121212;
 }
 
+@font-face {
+  font-family: Inter;
+  src:
+    url('./assets/fonts/Inter-Light.woff') format('woff'),
+    url('./assets/fonts/Inter-Light.otf') format('opentype');
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Inter;
+  src:
+    url('./assets/fonts/Inter-Medium.woff') format('woff'),
+    url('./assets/fonts/Inter-Medium.otf') format('opentype');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Inter;
+  src:
+    url('./assets/fonts/Inter-Bold.woff') format('woff'),
+    url('./assets/fonts/Inter-Bold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cormorant SC';
+  src:
+    url('./assets/fonts/CormorantSC-Medium.woff') format('woff'),
+    url('./assets/fonts/CormorantSC-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--primary-color);
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
   color: var(--text-color);
+  background-color: var(--primary-color);
+
   transition: background-color 0.3s;
 }
 
 .container {
-  max-width: 1440px;
-  padding: 0 100px;
+  padding: 0 20px;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1240px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 0 100px;
+  }
 }
