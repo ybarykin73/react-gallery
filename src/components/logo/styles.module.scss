@@ -1,5 +1,12 @@
 .logo {
   svg {
+    width: 73px;
+    height: 16px;
     fill: var(--primery-light-gray);
+
+    @media screen and (min-width: 1280px) {
+      width: 91px;
+      height: 20px;
+    }
   }
 }
