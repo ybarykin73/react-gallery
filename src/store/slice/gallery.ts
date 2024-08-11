@@ -1,13 +1,16 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi } from '@reduxjs/toolkit/query/react';
 
+import axiosBaseQuery from '../interceptor';
 import { ICardProps } from '../../types/ICard';
 
 export const galleryApi = createApi({
   reducerPath: 'galleryApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://test-front.framework.team/' }),
+  baseQuery: axiosBaseQuery({
+    baseUrl: 'https://test-front.framework.team/',
+  }),
   endpoints: (builder) => ({
     getGallery: builder.query<ICardProps[], string>({
-      query: () => `paintings/`,
+      query: () => ({ url: 'paintings', method: 'get' }),
     }),
   }),
 });
