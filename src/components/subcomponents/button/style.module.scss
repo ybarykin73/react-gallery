@@ -1,0 +1,21 @@
+.button {
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primery-light-gray);
+  text-transform: uppercase;
+  text-decoration: underline;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: var(--button-hover-color);
+  }
+
+  &:disabled {
+    color: var(--secondary-gray);
+  }
+}
