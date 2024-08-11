@@ -1,9 +1,10 @@
 import React from 'react';
+import noImage from '../../../../public/no-iamge.jpg';
 import styles from './styles.module.scss';
 import { ICardProps } from '../../../types/ICard';
 
 const GalleryCard: React.FC<ICardProps> = (props) => {
-  const { created, imageUrl, name } = props;
+  const { created, imageUrl = noImage, name } = props;
 
   return (
     <div className={styles.wrapper}>
