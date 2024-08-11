@@ -1,5 +1,7 @@
 import { useGetGalleryQuery } from '../../../store/slice/gallery';
 
+import Error from '../../error/Error';
+import GalleryGridPreloader from './GalleryGridPreloader';
 import GalleryCard from '../gallery-card/GalleryCard';
 import styles from './style.module.scss';
 
@@ -7,10 +9,11 @@ const GalleryGrid = () => {
   const { data, error, isLoading } = useGetGalleryQuery('');
 
   if (isLoading) {
-    return 'loading';
+    return <GalleryGridPreloader />;
   }
+
   if (error) {
-    return 'error!!!!';
+    return <Error />;
   }
 
   return (
