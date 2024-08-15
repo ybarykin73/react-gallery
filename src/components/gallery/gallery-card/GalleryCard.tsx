@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 import { IGallery } from '../../../types/IGallery';
 
 const GalleryCard: React.FC<IGallery> = (props) => {
-  const { created, imageUrl = noImage, name } = props;
+  const { created, imageUrl = noImage, name, author, location } = props;
 
   return (
     <div className={styles.wrapper}>
@@ -19,8 +19,12 @@ const GalleryCard: React.FC<IGallery> = (props) => {
       </div>
       <div className={styles.body}>
         <div className={styles.info}>
-          <h2 className={styles.name}>{name}</h2>
-          <p className={styles.years}>{created}</p>
+          <h2 className={styles.title}>{name}</h2>
+          <p className={styles.subtitle}>{created}</p>
+        </div>
+        <div className={styles.feature}>
+          <h2 className={styles.title}>{author}</h2>
+          <p className={styles.subtitle}>{location}</p>
         </div>
       </div>
     </div>

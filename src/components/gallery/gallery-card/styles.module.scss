@@ -1,5 +1,22 @@
 .wrapper {
   position: relative;
+
+  &:hover {
+    .img {
+      transform: scale(1.05);
+    }
+
+    .info {
+      transform: translateY(300%);
+    }
+    .feature {
+      left: 0;
+    }
+  }
+}
+
+.image {
+  overflow: hidden;
 }
 
 .img {
@@ -7,6 +24,7 @@
   width: 100%;
   max-height: 185px;
   object-fit: cover;
+  transition: transform 0.6s ease;
 
   @media screen and (min-width: 490px) {
     max-height: 300px;
@@ -25,6 +43,7 @@
 
 .body {
   position: absolute;
+  overflow: hidden;
   bottom: 0;
   left: 0;
   max-width: 236px;
@@ -39,19 +58,39 @@
 
   @media screen and (min-width: 1280px) {
     padding: 20px 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 2px;
+      top: 20px;
+      left: 0;
+      bottom: 20px;
+      background-color: var(--accent-color);
+    }
   }
 }
 
-.info {
+.info,
+.feature {
   padding: 0 12px;
+  transition:
+    transform 0.6s ease,
+    left 0.6s ease;
 
   @media screen and (min-width: 1280px) {
-    padding: 0 20px;
-    border-inline-start: 2px solid var(--accent-color);
+    padding: 0 22px;
   }
 }
 
-.name {
+.feature {
+  position: absolute;
+  top: 20px;
+  left: -100%;
+}
+
+.title {
   font-family: 'Cormorant SC', serif;
   text-transform: uppercase;
   font-size: 12px;
@@ -64,7 +103,7 @@
   }
 }
 
-.years {
+.subtitle {
   font-size: 8px;
   font-weight: 700;
   color: var(--accent-color);
