@@ -1,9 +1,9 @@
 import React from 'react';
 import noImage from '../../../../public/no-iamge.jpg';
 import styles from './styles.module.scss';
-import { ICardProps } from '../../../types/ICard';
+import { IGallery } from '../../../types/IGallery';
 
-const GalleryCard: React.FC<ICardProps> = (props) => {
+const GalleryCard: React.FC<IGallery> = (props) => {
   const { created, imageUrl = noImage, name } = props;
 
   return (

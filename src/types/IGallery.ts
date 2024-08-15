@@ -4,7 +4,5 @@ export interface IGallery {
   created: string;
   imageUrl: string;
   author: string;
-  authorId?: number;
   location: string;
-  locationId?: number;
 }

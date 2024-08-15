@@ -1,12 +1,11 @@
-import { useGetGalleryQuery } from '../../../store/slice/gallery';
-
 import Error from '../../error/Error';
 import GalleryGridPreloader from './GalleryGridPreloader';
 import GalleryCard from '../gallery-card/GalleryCard';
 import styles from './style.module.scss';
+import { useGalleryContext } from '../../../context/GalleryContext';
 
 const GalleryGrid = () => {
-  const { data, error, isLoading } = useGetGalleryQuery('');
+  const { data = [], isLoading, error } = useGalleryContext();
 
   if (isLoading) {
     return <GalleryGridPreloader />;
@@ -19,12 +18,14 @@ const GalleryGrid = () => {
   return (
     <div className={styles.wrapper}>
       <ul className={styles.list}>
-        {data?.slice(0, 6).map((item) => (
+        {data.map((item) => (
           <li key={item.id}>
             <GalleryCard
               created={item.created}
               imageUrl={item.imageUrl}
               name={item.name}
+              author={item.author}
+              location={item.location}
             />
           </li>
         ))}

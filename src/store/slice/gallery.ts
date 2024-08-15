@@ -1,7 +1,7 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 
 import axiosBaseQuery from '../interceptor';
-import { ICardProps } from '../../types/ICard';
+import { IPaintings } from '../../types/IPaintings';
 
 export const galleryApi = createApi({
   reducerPath: 'galleryApi',
@@ -9,10 +9,19 @@ export const galleryApi = createApi({
     baseUrl: 'https://test-front.framework.team/',
   }),
   endpoints: (builder) => ({
-    getGallery: builder.query<ICardProps[], string>({
-      query: () => ({ url: 'paintings', method: 'get' }),
+    getGallery: builder.query<IPaintings[], string>({
+      query: (str: string) => ({
+        url: `paintings${str}`,
+        method: 'get',
+      }),
+    }),
+    getQueryByName: builder.query<[], string>({
+      query: (str: string) => ({
+        url: str,
+        method: 'get',
+      }),
     }),
   }),
 });
 
-export const { useGetGalleryQuery } = galleryApi;
+export const { useGetGalleryQuery, useGetQueryByNameQuery } = galleryApi;
