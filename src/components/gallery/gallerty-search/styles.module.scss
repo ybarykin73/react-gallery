@@ -1,0 +1,50 @@
+.wrapper {
+  max-width: 340px;
+  width: 100%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.image {
+  position: absolute;
+  top: 10px;
+  left: 17px;
+  fill: var(--primary-light-gray);
+}
+
+.reset {
+  position: absolute;
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+  top: 0px;
+  right: 6px;
+  cursor: pointer;
+
+  & svg {
+    fill: var(--primary-light-gray);
+  }
+}
+
+.input {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--primary-light-gray);
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  padding-inline-start: 45px;
+  background-color: var(--secondary-color);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--input-border-color);
+
+  &::placeholder {
+    color: var(--secondary-gray);
+    letter-spacing: 0.6px;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 1px var(--input-border-color-focus);
+  }
+}

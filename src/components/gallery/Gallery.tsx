@@ -1,10 +1,15 @@
 import GalleryGrid from './gallery-grid/GalleryGrid';
+import GalleryHeader from './gallery-header/GalleryHeader';
+import GalleryProvider from '../../context/GalleryContext';
 
 const Gallery = () => {
   return (
-    <div className="container">
-      <GalleryGrid />
-    </div>
+    <GalleryProvider>
+      <div className="container">
+        <GalleryHeader />
+        <GalleryGrid />
+      </div>
+    </GalleryProvider>
   );
 };
 
