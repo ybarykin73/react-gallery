@@ -1,21 +1,21 @@
 import { useState } from 'react';
 import createSearch from '../../../utils/createSearch';
-import { useGalleryContext } from '../../../context/GalleryContext';
+import { useGalleryActionContext } from '../../../context/GalleryContext';
 
 import styles from './styles.module.scss';
 
 const GallerySearch = () => {
   const [search, setSearch] = useState('');
-  const { setSate } = useGalleryContext();
+  const { setSearchParam } = useGalleryActionContext();
 
   const reset = () => {
     setSearch('');
-    setSate(createSearch('', 'q'));
+    setSearchParam(createSearch('', 'q'));
   };
 
   const change = (e: string) => {
     setSearch(e);
-    setSate(createSearch(e, 'q'));
+    setSearchParam(createSearch(e, 'q'));
   };
   return (
     <div className={styles.wrapper}>
