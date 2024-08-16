@@ -14,7 +14,7 @@ const GalleryCard: React.FC<IGallery> = (props) => {
           height={260}
           className={styles.img}
           src={`https://test-front.framework.team${imageUrl}`}
-          alt=""
+          alt={name}
         />
       </div>
       <div className={styles.body}>
