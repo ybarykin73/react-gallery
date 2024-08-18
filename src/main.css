@@ -93,8 +93,16 @@ body {
   margin: 0 auto;
 }
 
+label,
+input,
 button {
   cursor: pointer;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
 }
 
 @media screen and (min-width: 768px) {

@@ -1,9 +1,17 @@
-.label {
-  position: relative;
-  cursor: pointer;
-  display: block;
+.wrapper {
+  & + .wrapper {
+    margin-top: 27px;
+  }
+}
 
-  & + .label {
+.button {
+  display: block;
+  position: relative;
+  width: 100%;
+  text-align: left;
+  padding: 0;
+
+  & + .button {
     margin-top: 9px;
   }
 }
@@ -11,32 +19,12 @@
 .title {
   font-family: 'Cormorant SC', serif;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 12px;
   text-transform: uppercase;
-  margin-bottom: 24px;
-}
+  padding: 3px 0;
 
-.input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-
-  &:checked + .body {
-    max-height: 1000px;
-    transition: max-height 1s ease-in-out;
-    margin-bottom: 36px;
-    overflow: visible;
-  }
-
-  &:checked ~ .decore::before {
-    transform: rotate(0);
+  @media screen and (min-width: 768px) {
+    font-size: 16px;
   }
 }
 
@@ -46,22 +34,34 @@
   transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
 }
 
+.main {
+  padding: 20px 0 5px;
+}
+
 .decore {
   position: absolute;
   width: 20px;
   height: 20px;
-  top: -2px;
-  right: -2px;
+  top: 0px;
+  right: -9px;
+
+  @media screen and (min-width: 768px) {
+    right: -2px;
+  }
 
   &::after,
   &::before {
     content: '';
     display: block;
     position: absolute;
-    width: 16px;
+    width: 10px;
     height: 1px;
     border-radius: 2px;
     background-color: var(--primary-light-gray);
+
+    @media screen and (min-width: 768px) {
+      width: 16px;
+    }
   }
 
   &::after {
@@ -71,6 +71,17 @@
   &::before {
     top: 9px;
     transform: rotate(-90deg);
-    transition: transform 0.2s ease;
+    transition: transform 0.5s ease;
+  }
+}
+
+.active {
+  .body {
+    max-height: 1000px;
+    overflow: visible;
+  }
+
+  .decore::before {
+    transform: rotate(0);
   }
 }
