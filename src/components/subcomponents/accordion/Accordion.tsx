@@ -12,7 +12,7 @@ const Accordion: React.FC<IProps> = (props) => {
   return (
     <div
       ref={wrapper}
-      className={`${styles.wrapper} ${isOpen ? styles.active : 'active'}`}
+      className={`${styles.wrapper} ${isOpen ? styles.active : ''}`}
     >
       <button
         type="button"
