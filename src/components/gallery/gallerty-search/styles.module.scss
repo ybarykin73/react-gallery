@@ -1,8 +1,11 @@
 .wrapper {
   max-width: 340px;
   width: 100%;
-  flex-shrink: 0;
   position: relative;
+
+  @media screen and (min-width: 768px) {
+    flex-shrink: 0;
+  }
 }
 
 .image {

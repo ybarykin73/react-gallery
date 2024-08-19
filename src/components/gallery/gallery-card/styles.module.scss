@@ -86,8 +86,12 @@
 
 .feature {
   position: absolute;
-  top: 20px;
+  top: 8px;
   left: -200%;
+
+  @media screen and (min-width: 768px) {
+    top: 20px;
+  }
 }
 
 .title {
