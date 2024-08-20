@@ -44,6 +44,22 @@
   }
 }
 
+.years {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+
+  & svg {
+    flex-shrink: 0;
+    fill: var(--secondary-gray);
+  }
+
+  & input {
+    max-width: 67px;
+  }
+}
+
 .footer {
   display: flex;
   align-items: center;
@@ -54,7 +70,7 @@
 
 .button {
   padding: 6px;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   background-color: var(--secondary-color);
   transition: background-color 0.2s ease;
 

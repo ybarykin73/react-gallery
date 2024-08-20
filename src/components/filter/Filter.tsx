@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Select from '../subcomponents/select/Select';
 import Button from '../subcomponents/button/Button';
+import Field from '../subcomponents/field/Field';
 import Accordion from '../subcomponents/accordion/Accordion';
 import { useGalleryActionContext } from '../../context/GalleryContext';
 
@@ -137,16 +138,31 @@ const Filter = () => {
             )}
 
             <Accordion name="Years">
-              <div>
-                <input
-                  type="number"
-                  onChange={(e) => setYearFrom(e.target.value)}
+              <div className={styles.years}>
+                <Field
                   key={`yearsFrom${reset}`}
-                />
-                <input
                   type="number"
-                  onChange={(e) => setYearTo(e.target.value)}
+                  placeholder="From"
+                  handleCahge={setYearFrom}
+                />
+                <svg
+                  width="16"
+                  height="2"
+                  viewBox="0 0 16 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M8.7 1.69999H15.4C15.6 1.69999 15.7 1.59999 15.9 1.49999C15.9 1.29999 16 1.19999 16 0.999988C16 0.799988 15.9 0.699988 15.8 0.499988C15.7 0.399988 15.5 0.299988 15.3 0.299988H8.7H7.3H0.7C0.5 0.299988 0.4 0.399988 0.2 0.499988C0.1 0.699988 0 0.799988 0 0.999988C0 1.19999 0.1 1.29999 0.2 1.49999C0.3 1.59999 0.5 1.69999 0.7 1.69999H7.4H8.7Z"
+                  />
+                </svg>
+                <Field
                   key={`yearsTo${reset}`}
+                  type="number"
+                  placeholder="To"
+                  handleCahge={setYearTo}
                 />
               </div>
             </Accordion>
