@@ -7,6 +7,7 @@ import { useGalleryActionContext } from '../../context/GalleryContext';
 
 import createSearch from '../../utils/createSearch';
 import deleteSearch from '../../utils/deleteSearch';
+import createLocationtList from '../../utils/createLocationtList';
 
 import { useGetQueryByNameQuery } from '../../store/slice/gallery';
 
@@ -15,6 +16,7 @@ import styles from './styles.module.scss';
 const Filter = () => {
   const { data: authorsData = [] } = useGetQueryByNameQuery('authors');
   const { data: locationData = [] } = useGetQueryByNameQuery('locations');
+
   const { setSearchParam } = useGalleryActionContext();
 
   const wrapper = useRef<HTMLDivElement>(null);
@@ -26,6 +28,11 @@ const Filter = () => {
 
   const setAuthor = (id: number) => {
     const params = createSearch(id, 'authorId');
+    setFilter(params);
+  };
+
+  const setLocation = (id: number) => {
+    const params = createSearch(id, 'locationId');
     setFilter(params);
   };
 
@@ -47,6 +54,7 @@ const Filter = () => {
     deleteSearch();
     setFilter('');
     setReset((prev) => prev + 1);
+    setSearchParam('');
   };
 
   useEffect(() => {
@@ -129,9 +137,9 @@ const Filter = () => {
             {locationData.length > 0 && (
               <Accordion name="Location">
                 <Select
-                  name="artist"
-                  list={authorsData}
-                  changeSelect={setAuthor}
+                  name="location"
+                  list={createLocationtList(locationData)}
+                  changeSelect={setLocation}
                   key={`location${reset}`}
                 />
               </Accordion>
