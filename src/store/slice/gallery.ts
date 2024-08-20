@@ -12,6 +12,9 @@ export const galleryApi = createApi({
     getGallery: builder.query<IPaintings[], string>({
       query: (str: string) => ({
         url: `paintings${str}`,
+        params: {
+          _limit: 6,
+        },
         method: 'get',
       }),
     }),

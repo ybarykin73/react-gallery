@@ -1,12 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
-import gallerySlice from './slice/gallerySlice';
 
 import { galleryApi } from './slice/gallery';
 
 const store = configureStore({
   reducer: {
-    Gallery: gallerySlice,
     [galleryApi.reducerPath]: galleryApi.reducer,
   },
 
