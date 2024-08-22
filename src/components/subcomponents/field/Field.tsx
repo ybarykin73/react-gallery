@@ -6,7 +6,7 @@ const Field: React.FC<IProps> = (props) => {
   const { type, placeholder, handleCahge } = props;
   const [value, setValue] = useState('');
 
-  const handleValue = (e) => {
+  const handleValue = (e: string) => {
     handleCahge(e);
     setValue(e);
   };

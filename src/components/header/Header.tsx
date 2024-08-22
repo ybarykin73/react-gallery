@@ -1,5 +1,6 @@
 import Logo from '../logo/Logo';
 import Theme from '../theme/Theme';
+
 import styles from './styles.module.scss';
 
 const Header = () => {

@@ -1,7 +1,8 @@
 import Error from '../../error/Error';
-import GalleryGridPreloader from './GalleryGridPreloader';
 import GalleryCard from '../gallery-card/GalleryCard';
-import styles from './style.module.scss';
+import GalleryGridPreloader from './GalleryGridPreloader';
+
+import styles from './styles.module.scss';
 import { useGalleryContext } from '../../../context/GalleryContext';
 
 const GalleryGrid = () => {

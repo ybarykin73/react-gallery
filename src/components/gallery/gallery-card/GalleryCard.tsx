@@ -1,6 +1,7 @@
 import React from 'react';
-import noImage from '../../../../public/no-iamge.jpg';
+
 import styles from './styles.module.scss';
+import noImage from '../../../../public/no-iamge.jpg';
 import { IGallery } from '../../../types/IGallery';
 
 const GalleryCard: React.FC<IGallery> = (props) => {

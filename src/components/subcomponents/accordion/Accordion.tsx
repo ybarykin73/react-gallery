@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 
-import styles from './style.module.scss';
+import styles from './styles.module.scss';
 import { IProps } from './IAccordion';
 
 const Accordion: React.FC<IProps> = (props) => {
