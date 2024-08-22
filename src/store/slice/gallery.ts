@@ -24,7 +24,18 @@ export const galleryApi = createApi({
         method: 'get',
       }),
     }),
+
+    getPagination: builder.query<IPaintings[], string>({
+      query: (str: string) => ({
+        url: `paintings${str}`,
+        method: 'get',
+      }),
+    }),
   }),
 });
 
-export const { useGetGalleryQuery, useGetQueryByNameQuery } = galleryApi;
+export const {
+  useGetGalleryQuery,
+  useGetQueryByNameQuery,
+  useGetPaginationQuery,
+} = galleryApi;

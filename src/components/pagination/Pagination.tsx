@@ -1,7 +1,10 @@
 import PaginationView from './PaginationView';
+import { useGalleryContext } from '../../context/GalleryContext';
 
 const Pagination = () => {
-  const length = Math.ceil(32 / 6);
+  const { pagination } = useGalleryContext();
+  const length = Math.ceil(pagination / 6);
+
   return <PaginationView length={length} />;
 };
 
