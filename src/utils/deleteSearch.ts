@@ -4,6 +4,7 @@ const deleteSearch = () => {
   url.searchParams.delete('locationId');
   url.searchParams.delete('created_gte');
   url.searchParams.delete('created_lte');
+  url.searchParams.delete('_page');
   window.history.pushState({}, '', url);
 };
 

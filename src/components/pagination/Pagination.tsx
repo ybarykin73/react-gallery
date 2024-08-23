@@ -5,7 +5,7 @@ const Pagination = () => {
   const { pagination } = useGalleryContext();
   const length = Math.ceil(pagination / 6);
 
-  return <PaginationView length={length} />;
+  return <PaginationView key={pagination} length={length} />;
 };
 
 export default Pagination;

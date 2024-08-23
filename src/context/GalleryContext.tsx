@@ -46,7 +46,9 @@ const GalleryProvider: React.FC<IProps> = (props) => {
     isLoading,
     error,
   } = useGetGalleryQuery(searchParam);
-  const { data: dataList = [] } = useGetPaginationQuery(searchParam);
+  const { data: dataList = [] } = useGetPaginationQuery(
+    searchParam.replace(/\_page=.{1}/g, '')
+  );
 
   const { data: author = [] } = useGetQueryByNameQuery('authors');
   const { data: location = [] } = useGetQueryByNameQuery('locations');

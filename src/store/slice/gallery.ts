@@ -27,7 +27,7 @@ export const galleryApi = createApi({
 
     getPagination: builder.query<IPaintings[], string>({
       query: (str: string) => ({
-        url: `paintings${str}`,
+        url: `paintings${str.replace(/\_page=.{1}/g, '')}`,
         method: 'get',
       }),
     }),

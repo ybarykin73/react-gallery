@@ -15,6 +15,7 @@ const GallerySearch = () => {
 
   const change = (e: string) => {
     setSearch(e);
+    setSearchParam(createSearch(1, '_page'));
     setSearchParam(createSearch(e, 'q'));
   };
   return (

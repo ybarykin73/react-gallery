@@ -47,6 +47,7 @@ const Filter = () => {
   };
 
   const applyFilter = () => {
+    setSearchParam(createSearch(1, '_page'));
     setSearchParam(filter);
   };
 
