@@ -101,9 +101,10 @@ button {
 }
 
 button {
-  background-color: transparent;
-  border: none;
+  font-family: inherit;
   color: inherit;
+  border: none;
+  background-color: transparent;
 }
 
 svg {
